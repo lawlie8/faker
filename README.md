@@ -194,4 +194,4 @@ TODO
 
 LICENSE
 -------
-Copyright (c) 2019 DiUS Computing Pty Ltd. See the LICENSE file for license rights and limitations.
+See the LICENSE file for license rights and limitations.
