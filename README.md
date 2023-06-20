@@ -1,10 +1,6 @@
 Java Faker
 ==========
 
-[![Maven Status](https://maven-badges.herokuapp.com/maven-central/com.github.javafaker/javafaker/badge.svg?style=flat)](http://mvnrepository.com/artifact/com.github.javafaker/javafaker)
-[![Build Status](https://travis-ci.org/DiUS/java-faker.svg?branch=master)](https://travis-ci.org/DiUS/java-faker)
-[![Coverage Status](https://coveralls.io/repos/DiUS/java-faker/badge.svg)](https://coveralls.io/r/DiUS/java-faker)
-[![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This library is a port of Ruby's [faker](https://github.com/stympy/faker) gem (as well as Perl's Data::Faker library) that generates fake data.
 It's useful when you're developing a new project and need some pretty data for showcase.
@@ -15,9 +11,9 @@ In pom.xml, add the following xml stanza between `<dependencies> ... </dependenc
 
 ```xml
 <dependency>
-    <groupId>com.github.javafaker</groupId>
-    <artifactId>javafaker</artifactId>
-    <version>1.0.2</version>
+    <groupId>com.github.lawlie8</groupId>
+    <artifactId>faker</artifactId>
+    <version>1.0.3</version>
 </dependency>
 ```
 
@@ -25,7 +21,7 @@ For gradle users, add the following to your build.gradle file.
 
 ```groovy
 dependencies {
-    implementation 'com.github.javafaker:javafaker:1.0.2'
+    implementation 'com.github.lawlie8:lawlie8:1.0.3'
 }
 
 ```
@@ -42,16 +38,10 @@ String lastName = faker.name().lastName(); // Barton
 String streetAddress = faker.address().streetAddress(); // 60018 Sawayn Brooks Suite 449
 ```
 
-This is a [demo web application](https://java-faker.herokuapp.com/) that uses the library.
-
-Javadoc
------
-http://dius.github.io/java-faker/apidocs/index.html
-
 
 Contributions
 -------------
-See [CONTRIBUTING.md](https://github.com/DiUS/java-faker/blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/lawlie8/faker/blob/master/CONTRIBUTING.md)
 
 
 Fakers
