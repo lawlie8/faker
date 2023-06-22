@@ -8,12 +8,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class FakeValues implements FakeValuesInterface {
     private final Locale locale;
     private final String filename;
     private final String path;
     private Map values;
+    private Logger log = Logger.getLogger(this.getClass().toString());
 
     FakeValues(Locale locale) {
         this(locale, getFilename(locale), getFilename(locale));
@@ -54,13 +56,14 @@ public class FakeValues implements FakeValuesInterface {
     }
 
     private Map loadValues() {
-        String pathWithLocaleAndFilename = "/" + locale.getLanguage() + "/" + this.filename;
+        String pathWithLocaleAndFilename = "/" + locale.getLanguage().toLowerCase() +"-"+locale.getCountry().toLowerCase()+ "/" + this.filename;
         String pathWithFilename = "/" + filename + ".yml";
         String pathWithLocale = "/" + locale.getLanguage() + ".yml";
 
         List<String> paths = Arrays.asList(pathWithLocaleAndFilename, pathWithFilename, pathWithLocale);
         InputStream stream = null;
         for (String path : paths) {
+            log.info("Searching Files "+path);
             stream = findStream(path);
             if (stream != null) {
                 break;
