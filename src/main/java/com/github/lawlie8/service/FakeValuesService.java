@@ -4,6 +4,7 @@ import com.github.lawlie8.Address;
 import com.github.lawlie8.Faker;
 import com.github.lawlie8.Name;
 import com.github.lawlie8.service.files.EnFile;
+import com.github.lawlie8.service.files.EnIndFile;
 import com.mifmif.common.regex.Generex;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -65,9 +66,17 @@ public class FakeValuesService {
 
         for (final Locale l : locales) {
             boolean isEnglish = l.equals(Locale.ENGLISH);
+            boolean isEnglishIndian = l.equals(new Locale("en","ind"));
+
             if (isEnglish) {
                 FakeValuesGrouping fakeValuesGrouping = new FakeValuesGrouping();
                 for (EnFile file : EnFile.getFiles()) {
+                    fakeValuesGrouping.add(new FakeValues(l, file.getFile(), file.getPath()));
+                }
+                all.add(fakeValuesGrouping);
+            } else if (isEnglishIndian) {
+                FakeValuesGrouping fakeValuesGrouping = new FakeValuesGrouping();
+                for (EnIndFile file : EnIndFile.getFiles()) {
                     fakeValuesGrouping.add(new FakeValues(l, file.getFile(), file.getPath()));
                 }
                 all.add(fakeValuesGrouping);
