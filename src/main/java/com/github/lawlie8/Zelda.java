@@ -14,4 +14,12 @@ public class Zelda {
     public String character() {
         return faker.resolve("games.zelda.characters");
     }
+
+    public String locations() {
+        return faker.resolve("games.zelda.locations");
+    }
+
+    public String items() {
+        return faker.resolve("games.zelda.items");
+    }
 }

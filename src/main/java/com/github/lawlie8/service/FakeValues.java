@@ -56,7 +56,12 @@ public class FakeValues implements FakeValuesInterface {
     }
 
     private Map loadValues() {
-        String pathWithLocaleAndFilename = "/" + locale.getLanguage().toLowerCase() +"-"+locale.getCountry().toLowerCase()+ "/" + this.filename;
+        StringBuilder strFilePath = new StringBuilder();
+        strFilePath.append("/").append(locale.getLanguage().toLowerCase());
+        if(!locale.getCountry().toLowerCase().isEmpty())
+            strFilePath.append("-").append(locale.getCountry().toLowerCase());
+        strFilePath.append("/").append(this.filename);
+        String pathWithLocaleAndFilename = strFilePath.toString();
         String pathWithFilename = "/" + filename + ".yml";
         String pathWithLocale = "/" + locale.getLanguage() + ".yml";
 
