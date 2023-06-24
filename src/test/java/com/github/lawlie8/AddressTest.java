@@ -70,6 +70,12 @@ public class AddressTest extends AbstractFakerTest {
     }
 
     @Test
+    public void testCityWithState() {
+        Faker faker = new Faker(new Locale("en","ind"));
+        assertThat(faker.address().city("IN-AP"), matchesRegularExpression("[A-Za-z'() ]+"));
+    }
+
+    @Test
     public void testCityName() {
         assertThat(faker.address().cityName(), matchesRegularExpression("[A-Za-z'() ]+"));
     }

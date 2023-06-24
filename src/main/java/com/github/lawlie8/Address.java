@@ -2,7 +2,6 @@ package com.github.lawlie8;
 
 public class Address {
     private final Faker faker;
-
     protected Address(Faker faker) {
         this.faker = faker;
     }
@@ -65,6 +64,10 @@ public class Address {
 
     public String city() {
         return faker.fakeValuesService().resolve("address.city", this, faker);
+    }
+
+    public String city(String state) {
+        return faker.fakeValuesService().resolve("address.city."+state, this, faker);
     }
 
     public String cityName() {
